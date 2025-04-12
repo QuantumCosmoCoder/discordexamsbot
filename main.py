@@ -137,7 +137,7 @@ class Dropdown(discord.ui.View):
         pass
 
 
-@client.tree.command(name="exams", description="dropdown menu", guild=GUILD_ID)
+@client.tree.command(name="exams", description="List dates for exams", guild=GUILD_ID)
 async def button(interaction: discord.Interaction):
     await interaction.response.send_message(view=Dropdown())
 
