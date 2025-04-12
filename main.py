@@ -3,11 +3,11 @@ from discord.ext import commands
 from discord import app_commands
 
 SELECT_OPTIONS = [
-    discord.SelectOption(label='PA - 1', value="1", description='Periodic Assessment 1', emoji='✅'),
-    discord.SelectOption(label='PA - 2', value="2", description='work in progress', emoji='⚠️'),
-    discord.SelectOption(label='HALF YEARLY', value="3", description='work in progress', emoji='⚠️'),
-    discord.SelectOption(label='PA - 3', value="4", description='work in progress', emoji='⚠️'),
-    discord.SelectOption(label='FINALS', value="5", description='work in progress', emoji='⚠️')
+    discord.SelectOption(label='PA - 1', value="1", description='Periodic Assessment 1', emoji='📝'),
+    discord.SelectOption(label='PA - 2', value="2", description='Periodic Assessment 2', emoji='📝'),
+    discord.SelectOption(label='HALF YEARLY', value="3", description='Half Yearly', emoji='📝'),
+    discord.SelectOption(label='PA - 3', value="4", description='Periodic Assessment 3', emoji='📝'),
+    discord.SelectOption(label='FINALS', value="5", description='Annuals', emoji='📝')
 ]
 
 
@@ -89,7 +89,7 @@ class Dropdown(discord.ui.View):
             await interaction.response.send_message(embed=embed)
 
         elif select.values == ['2']:
-            embed = discord.Embed(title='PA-2 Exams', description='', color=discord.Colour.red())
+            embed = discord.Embed(title='PA-2 Exams', description='', color=discord.Colour.purple())
             embed.add_field(name='Science', value='14th July')
             embed.add_field(name='Social Science', value='21st July')
             embed.add_field(name='II Language', value='28th July')
@@ -101,7 +101,7 @@ class Dropdown(discord.ui.View):
             await interaction.response.send_message(embed=embed)
 
         elif select.values == ['3']:
-            embed = discord.Embed(title='Half Yearly Exams', description='', color=discord.Colour.red())
+            embed = discord.Embed(title='Half Yearly Exams', description='', color=discord.Colour.dark_magenta())
             embed.add_field(name='II Language', value='2nd September')
             embed.add_field(name='Mathematics', value='4th September')
             embed.add_field(name='Social Science', value='8th September')
@@ -113,7 +113,7 @@ class Dropdown(discord.ui.View):
             await interaction.response.send_message(embed=embed)
 
         elif select.values == ['4']:
-            embed = discord.Embed(title='PA-3 Exams', description='', color=discord.Colour.red())
+            embed = discord.Embed(title='PA-3 Exams', description='', color=discord.Colour.yellow())
             embed.add_field(name='Science', value='13th October')
             embed.add_field(name='Social Science', value='17th October')
             embed.add_field(name='II Language', value='27th October(rachits bday)')
@@ -125,7 +125,7 @@ class Dropdown(discord.ui.View):
             await interaction.response.send_message(embed=embed)
 
         elif select.values == ['5']:
-            embed = discord.Embed(title='Annual Exams', description='', color=discord.Colour.red())
+            embed = discord.Embed(title='Annual Exams', description='', color=discord.Colour.dark_blue())
             embed.add_field(name='Social Science', value='2nd February')
             embed.add_field(name='II Language', value='4th February')
             embed.add_field(name='Mathematics', value='6th February')
@@ -146,4 +146,4 @@ async def button(interaction: discord.Interaction):
     await interaction.response.send_message(view=Dropdown())
 
 
-client.run('secret stuff')
+client.run('nothing to see here')
