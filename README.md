@@ -1,0 +1,2 @@
+# discordexamsbot
+Exams bot
