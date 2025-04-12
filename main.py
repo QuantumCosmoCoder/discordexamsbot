@@ -146,4 +146,4 @@ async def button(interaction: discord.Interaction):
     await interaction.response.send_message(view=Dropdown())
 
 
-client.run('nothing to see here')
+client.run('hm')
