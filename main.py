@@ -26,7 +26,7 @@ class Client(commands.Bot):
     async def on_message(self, message):
         if message.author == self.user:
             return
-        if message.content.startswith('hello'):
+        if message.content.lower().startswith('hello'):
             await message.channel.send(f'Hi there {message.author}')
 
 
@@ -146,4 +146,4 @@ async def button(interaction: discord.Interaction):
     await interaction.response.send_message(view=Dropdown())
 
 
-client.run('hm')
+client.run('private info')
